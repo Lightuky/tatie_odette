@@ -18,7 +18,7 @@
 }
 
 .u-section-1 .u-text-1 {
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   font-size: 2.25rem;
   margin: 38px 0 0;
 }
@@ -107,14 +107,14 @@
 }
 
 .u-section-5 .u-text-1 {
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   background-image: none;
   font-size: 3rem;
   margin: 30px calc(((100% - 1140px) / 2) + 467px) 0;
 }
 
 .u-section-5 .u-text-2 {
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   background-image: none;
   font-size: 2.25rem;
   margin: 20px 262px 0;
@@ -144,7 +144,7 @@
 }
 
 .u-section-5 .u-text-3 {
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   margin: 20px 0 0;
 }
 
@@ -178,7 +178,7 @@
 }
 
 .u-section-5 .u-text-5 {
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   margin: 20px 0 0;
 }
 
@@ -212,7 +212,7 @@
 }
 
 .u-section-5 .u-text-7 {
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   margin: 20px 0 0;
 }
 
@@ -445,13 +445,13 @@
 .u-section-9 .u-text-1 {
   font-size: 3.75rem;
   font-weight: 700;
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   margin: 0;
 }
 
 .u-section-9 .u-text-2 {
   font-size: 2rem;
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   margin: 76px 0 0;
 }
 
@@ -792,7 +792,7 @@
 
 .u-section-17 .u-text-2 {
   font-weight: 700;
-  font-family: "Seaweed Script";
+  font-family: "Seaweed Script", serif;
   font-size: 6rem;
   margin: 0;
 }
