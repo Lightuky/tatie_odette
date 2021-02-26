@@ -16,17 +16,16 @@
           href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Ubuntu:300,300i,400,400i,500,500i,700,700i|Seaweed+Script:400|Libre+Baskerville:400,400i,700|Baskervville:400,400i">
-
-
     <script type="application/ld+json">{
-        "@context": "http://schema.org",
-        "@type": "Organization",
-        "name": "",
-        "url": "index.html",
-        "logo": "images/TatieOdette.png",
-        "sameAs": []
-    }</script>
-    <meta property="og:title" content="Acceuil">
+            "@context": "http://schema.org",
+            "@type": "Organization",
+            "name": "",
+            "url": "index.html",
+            "logo": "images/TatieOdette.png",
+            "sameAs": []
+        }
+    </script>
+    <meta property="og:title" content="Accueil">
     <meta property="og:type" content="website">
     <meta name="theme-color" content="#478ac9">
     <link rel="canonical" href="index.html">
@@ -156,17 +155,20 @@
 <section class="u-align-center u-clearfix u-section-5" id="sec-9e18">
     <h2 class="u-custom-font u-text u-text-custom-color-1 u-text-1">Tatie Odette</h2>
     <h3 class="u-custom-font u-text u-text-custom-color-1 u-text-2">La machine qui donne vie à vos envies
-        chocolatées.</h3>
+        chocolatées.
+    </h3>
     <div class="u-list u-repeater u-list-1">
         <div class="u-container-style u-list-item u-repeater-item u-list-item-1" data-animation-name="rotateIn"
              data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">
             <div class="u-container-layout u-similar-container u-valign-top u-container-layout-1">
                 <span class="u-custom-color-1 u-icon u-icon-circle u-spacing-20 u-icon-1">
-                    <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.999 511.999" style="">
+                    <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 511.999 511.999"
+                         style="">
                         <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-abdd"></use>
                     </svg>
                     <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-                         xml:space="preserve" class="u-svg-content" viewBox="0 0 511.999 511.999" x="0px" y="0px"
+                         xml:space="preserve" class="u-svg-content" viewBox="0 0 511.999 511.999" x="0px"
+                         y="0px"
                          id="svg-abdd" style="enable-background:new 0 0 511.999 511.999;">
                         <g>
                             <g>
@@ -209,7 +211,7 @@
                             </g>
                         </g>
                     </svg>
-          </span>
+                </span>
                 <h3 class="u-align-center u-custom-font u-text u-text-3">Imaginez</h3>
                 <p class="u-align-center u-text u-text-4">Imaginez votre oeuvre chocolaté de vos rêves<br></p>
                 <a href=""
@@ -233,7 +235,7 @@
                         <path d="m141.65625 418.34375-80-80c-2.289062-2.285156-5.730469-2.972656-8.71875-1.734375s-4.9375 4.15625-4.9375 7.390625v80c0 4.417969 3.582031 8 8 8h80c3.234375 0 6.152344-1.949219 7.390625-4.9375s.550781-6.429688-1.734375-8.71875zm-77.65625-2.34375v-52.6875l52.6875 52.6875zm0 0"></path>
                         <path d="m471.023438 68.289062c11.960937-11.960937 11.960937-31.351562 0-43.3125-11.960938-11.960937-31.351563-11.960937-43.3125 0l-12 12c-1.542969-20.808593-18.84375-36.9218745-39.710938-36.976562h-272c-22.082031.0273438-39.972656 17.917969-40 40v208h16v-208c0-13.253906 10.746094-24 24-24h272c13.253906 0 24 10.746094 24 24v12.6875l-75.3125 75.3125h-58.800781c-15.773438-40.386719-58.625-63.257812-100.957031-53.875-42.335938 9.378906-71.515626 48.207031-68.753907 91.476562 2.761719 43.273438 36.644531 78.078126 79.824219 82v32.398438c0 4.417969 3.582031 8 8 8h176c4.417969 0 8-3.582031 8-8v-108.6875l32-32v164.6875h-184c-4.417969 0-8 3.582031-8 8v64c0 4.417969 3.582031 8 8 8h184v8c0 13.253906-10.746094 24-24 24h-128v16h128c22.082031-.027344 39.972656-17.917969 40-40v-8h56c4.417969 0 8-3.582031 8-8v-64c0-4.417969-3.582031-8-8-8h-56v-180.6875zm-32-32c3.667968-3.832031 9.121093-5.375 14.253906-4.039062 5.128906 1.335938 9.136718 5.34375 10.472656 10.472656 1.335938 5.132813-.207031 10.585938-4.039062 14.253906l-3.710938 3.710938-20.6875-20.6875zm-183.023438 123.710938c-.050781 36.644531-27.585938 67.421875-64 71.527344v-87.527344h62.144531c1.214844 5.246094 1.839844 10.613281 1.855469 16zm-80-24v95.527344c-34.316406-3.777344-61.121094-31.386719-63.886719-65.800782-2.765625-34.414062 19.285157-65.945312 52.558594-75.15625 33.273437-9.210937 68.402344 6.492188 83.726563 37.429688h-64.398438c-4.417969 0-8 3.582031-8 8zm176 136h-160v-24.398438c24.667969-2.160156 47.269531-14.652343 62.222656-34.390624 14.949219-19.738282 20.851563-44.882813 16.25-69.210938h38.214844l-18.34375 18.34375c-1.117188 1.113281-1.878906 2.539062-2.183594 4.089844l-8 40c-.46875 2.347656.136719 4.785156 1.65625 6.636718 1.519532 1.851563 3.789063 2.929688 6.183594 2.929688.539062.003906 1.074219-.050781 1.601562-.160156l40-8c1.546876-.304688 2.972657-1.066406 4.085938-2.183594l18.3125-18.34375zm-51.089844-87.777344 10.867188 10.867188-13.601563 2.710937zm131.089844 135.777344v16h16v-16h16v48h-240v-48h16v16h16v-16h16v16h16v-16h16v16h16v-16h16v16h16v-16h16v16h16v-16h16v16h16v-16zm-104-131.3125-20.6875-20.6875 116.6875-116.6875 20.6875 20.6875zm0 0"></path>
                     </svg>
-          </span>
+                </span>
                 <h3 class="u-custom-font u-text u-text-5">Créez</h3>
                 <p class="u-text u-text-6">Créer votre oeuvre chocolatés selon vos goûts et vos envies</p>
                 <a href=""
@@ -255,7 +257,7 @@
                             <path d="M149.539,229.176c.127.034.255.065.385.093a76.107,76.107,0,0,0,16.022,1.7c.369,0,.738-.011,1.106-.016a28.034,28.034,0,0,0,29.761,15.032l9.466-1.61a25.668,25.668,0,0,0,19.066,4.293l19.138-3.255a36.142,36.142,0,0,0,6.062,8.045l57.8,57.8a8,8,0,0,0,11.314,0l57.8-57.8a36,36,0,0,0-50.914-50.914L314,215.087l-3.383-3.383a33.209,33.209,0,0,0,7.258-41.059,7.977,7.977,0,0,0,.474-1.486l3.323-15.433a44.212,44.212,0,0,0-9.8-38.116l-29.623-34.1A43.888,43.888,0,0,0,248.2,66.371l-120.9,2.3L27.569,18.956A8,8,0,0,0,16,26.116v120a8,8,0,0,0,4.706,7.29l62.24,28.119,12.019,14.743a94.79,94.79,0,0,0,53.327,32.65C148.708,229.007,149.123,229.094,149.539,229.176Zm36-.744a76.432,76.432,0,0,0,9.811-3.316,25.877,25.877,0,0,0,.812,4.752l-2.026.345A12.038,12.038,0,0,1,185.534,228.432Zm37.129,4.464a9.708,9.708,0,0,1-9.787-4.307,10.083,10.083,0,0,1-1.054-8.738,8.839,8.839,0,0,1,2.833-4.155l7.673-3.828,20.366,2.485A35.991,35.991,0,0,0,240,228c0,.648.02,1.294.054,1.937Zm85.68-.838a8,8,0,0,0,11.314,0l18.2-18.2a20,20,0,0,1,28.287,28.287L314,294.286l-52.141-52.14a19.982,19.982,0,0,1-2.16-25.718l25.212,3.076a33.481,33.481,0,0,0,10.5-.38Zm-200.977-45.9-13.209-16.2a7.981,7.981,0,0,0-2.907-2.235L32,140.952V39.043l89.918,44.825a8.357,8.357,0,0,0,3.722.84L248.5,82.369c.18,0,.358-.006.537-.006A27.927,27.927,0,0,1,270.173,92L299.8,126.1a28.133,28.133,0,0,1,6.235,24.255l-1.527,7.095a33.219,33.219,0,0,0-8.621-3.142l-14.577-3.139,1.684-7.82a8,8,0,0,0-15.642-3.368l-1.684,7.821-11.455-2.467-9.019-22.848a8,8,0,0,0-14.883,5.875l5.1,12.926-16.8-3.617a8,8,0,1,0-3.368,15.64l77.277,16.639a17.088,17.088,0,0,1-5.667,33.668l-64.97-7.927a8.006,8.006,0,0,0-4.539.783l-6.157,3.07c-.019.007-.039.011-.058.018a22.755,22.755,0,0,0-4.786,2.4l-13.362,6.665a60.642,60.642,0,0,1-39.178,5.105c-.227-.064-.457-.119-.69-.163-.489-.093-.978-.193-1.457-.3A78.727,78.727,0,0,1,107.366,186.158Z"></path>
                         </g>
                     </svg>
-          </span>
+                </span>
                 <h3 class="u-custom-font u-text u-text-7">Offrez</h3>
                 <p class="u-text u-text-8">Partagez votre oeuvres en l'offrant, ou dégustez-le directement!</p>
                 <a href=""
@@ -311,13 +313,15 @@
                     <div class="u-container-style u-layout-cell u-left-cell u-size-30 u-layout-cell-1">
                         <div class="u-container-layout u-container-layout-1">
                             <h1 class="u-custom-font u-font-ubuntu u-text u-text-body-alt-color u-text-1">D'où vient
-                                notre chocolat?</h1>
+                                notre chocolat?
+                            </h1>
                         </div>
                     </div>
                     <div class="u-container-style u-layout-cell u-right-cell u-size-30 u-layout-cell-2">
                         <div class="u-container-layout u-valign-top u-container-layout-2">
                             <p class="u-text u-text-body-alt-color u-text-2">Notre chocolat est fourni par nul autre que
-                                Valrhona,l'un des plus grands fournisseur de chocolat de qualité.</p>
+                                Valrhona,l'un des plus grands fournisseur de chocolat de qualité.
+                            </p>
                             <img src="images/Capture-dcran-2020-04-10--11.28.57.png" alt=""
                                  class="u-image u-image-default u-opacity u-opacity-90 u-image-1"
                                  data-image-width="2012" data-image-height="1312">
@@ -407,7 +411,8 @@
         <div class="u-container-style u-group u-group-2">
             <div class="u-container-layout u-container-layout-2">
                 <p class="u-text u-text-custom-color-1 u-text-1">Gagnez du temps,créez votre modèle maintenant et
-                    scannez-le une fois devant notre machine Tatie Odette!</p>
+                    scannez-le une fois devant notre machine Tatie Odette!
+                </p>
                 <a href="#"
                    class="u-border-2 u-border-hover-custom-color-1 u-border-white u-btn u-btn-round u-button-style u-none u-radius-50 u-text-hover-custom-color-1 u-text-white u-btn-1">Créer</a>
             </div>
@@ -439,9 +444,12 @@
                                                          xlink:href="#svg-5fb4"></use>
                                                 </svg>
                                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                                                     class="u-svg-content" viewBox="0 0 112.2 112.2" x="0px" y="0px"
-                                                     id="svg-5fb4" style="enable-background:new 0 0 112.2 112.2;">
+                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xml:space="preserve"
+                                                     class="u-svg-content" viewBox="0 0 112.2 112.2" x="0px"
+                                                     y="0px"
+                                                     id="svg-5fb4"
+                                                     style="enable-background:new 0 0 112.2 112.2;">
                                                     <path d="M56.1,0C25.1,0,0,25.1,0,56.1c0,31,25.1,56.1,56.1,56.1c31,0,56.1-25.1,56.1-56.1C112.2,25.1,87.1,0,56.1,0z M90.6,73.4c0,9.6-7.8,17.5-17.5,17.5H38.6c-9.6,0-17.5-7.9-17.5-17.6V38.8c0-9.6,7.8-17.5,17.5-17.5h34.5c9.6,0,17.5,7.8,17.5,17.5 V73.4z"></path>
                                                     <path d="M73.1,28.9H38.6c-5.4,0-9.9,4.4-9.9,9.9v34.5c0,5.4,4.4,9.9,9.9,9.9h34.5c5.4,0,9.9-4.4,9.9-9.9V38.8 C83,33.4,78.6,28.9,73.1,28.9z M55.9,74C46,74,38,66,38,56.1c0-9.9,8-17.9,17.9-17.9c9.9,0,17.9,8,17.9,17.9 C73.8,66,65.8,74,55.9,74z M74.3,41.9c-2.3,0-4.2-1.9-4.2-4.2s1.9-4.2,4.2-4.2c2.3,0,4.2,1.9,4.2,4.2S76.6,41.9,74.3,41.9z"></path>
                                                     <path d="M55.9,45.8c-5.7,0-10.4,4.6-10.3,10.3c0,5.7,4.6,10.3,10.3,10.3s10.3-4.6,10.3-10.3 C66.2,50.4,61.6,45.8,55.9,45.8z"></path>
@@ -456,9 +464,12 @@
                                                          xlink:href="#svg-a6c9"></use>
                                                 </svg>
                                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                                                     class="u-svg-content" viewBox="0 0 112.2 112.2" x="0px" y="0px"
-                                                     id="svg-a6c9" style="enable-background:new 0 0 112.2 112.2;">
+                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xml:space="preserve"
+                                                     class="u-svg-content" viewBox="0 0 112.2 112.2" x="0px"
+                                                     y="0px"
+                                                     id="svg-a6c9"
+                                                     style="enable-background:new 0 0 112.2 112.2;">
                                                     <path d="M56.1,0C25.1,0,0,25.1,0,56.1c0,31,25.1,56.1,56.1,56.1c31,0,56.1-25.1,56.1-56.1C112.2,25.1,87.1,0,56.1,0z M71.6,34.3h-8.2c-1.3,0-3.2,0.7-3.2,3.5v7.6h11.3l-1.3,12.9h-10V95H45V58.3h-7.2V45.4H45v-8.3c0-6,2.8-15.3,15.3-15.3l11.2,0V34.3z "></path>
                                                 </svg>
                                             </span>
@@ -471,9 +482,12 @@
                                                          xlink:href="#svg-8808"></use>
                                                 </svg>
                                                 <svg xmlns="http://www.w3.org/2000/svg"
-                                                     xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
-                                                     class="u-svg-content" viewBox="0 0 112.2 112.2" x="0px" y="0px"
-                                                     id="svg-8808" style="enable-background:new 0 0 112.2 112.2;">
+                                                     xmlns:xlink="http://www.w3.org/1999/xlink"
+                                                     xml:space="preserve"
+                                                     class="u-svg-content" viewBox="0 0 112.2 112.2" x="0px"
+                                                     y="0px"
+                                                     id="svg-8808"
+                                                     style="enable-background:new 0 0 112.2 112.2;">
                                                     <path d="M56.1,0C25.1,0,0,25.1,0,56.1s25.1,56.1,56.1,56.1s56.1-25.1,56.1-56.1S87.1,0,56.1,0z M83.8,47.3 c0,0.6,0,1.2,0,1.7c0,17.7-13.5,38.2-38.2,38.2c-7.6,0-14.6-2.2-20.6-6c1,0.1,2.1,0.2,3.2,0.2c6.3,0,12.1-2.1,16.7-5.7 c-5.9-0.1-10.8-4-12.5-9.3c0.8,0.2,1.7,0.2,2.5,0.2c1.2,0,2.4-0.2,3.5-0.5c-6.1-1.2-10.8-6.7-10.8-13.1c0-0.1,0-0.1,0-0.2 c1.8,1,3.9,1.6,6.1,1.7c-3.6-2.4-6-6.5-6-11.2c0-2.5,0.7-4.8,1.8-6.7c6.6,8.1,16.5,13.5,27.6,14c-0.2-1-0.3-2-0.3-3.1 c0-7.4,6-13.4,13.4-13.4c3.9,0,7.3,1.6,9.8,4.2c3.1-0.6,5.9-1.7,8.5-3.3c-1,3.1-3.1,5.8-5.9,7.4c2.7-0.3,5.3-1,7.7-2.1 C88.7,43,86.4,45.4,83.8,47.3z"></path>
                                                 </svg>
                                             </span>
@@ -491,7 +505,8 @@
                                     <div class="u-form u-form-1">
                                         <form action="#" method="POST"
                                               class="u-block-583d-21 u-clearfix u-form-spacing-25 u-form-vertical u-inner-form"
-                                              source="custom"><!-- hidden inputs for siteId and pageId -->
+                                              source="custom">
+                                            <!-- hidden inputs for siteId and pageId -->
                                             <!-- always visible -->
                                             <div class="u-form-email u-form-group">
                                                 <label for="email-e4cc"
@@ -565,7 +580,8 @@
     <div class="u-social-icons u-spacing-20 u-social-icons-1">
         <a class="u-social-url" title="instagram" target="_blank" href="">
             <span class="u-icon u-icon-circle u-social-icon u-social-instagram u-text-white u-icon-1">
-                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 169.063 169.063" style="">
+                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 169.063 169.063"
+                     style="">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-2b44"></use>
                 </svg>
                 <svg class="u-svg-content" id="svg-2b44" style="color: rgb(255, 255, 255);">
@@ -582,7 +598,8 @@
                 <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 24 24" style="">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-f723"></use>
                 </svg>
-                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve"
+                <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+                     xml:space="preserve"
                      class="u-svg-content" viewBox="0 0 24 24" id="svg-f723">
                     <path d="m15.997 3.985h2.191v-3.816c-.378-.052-1.678-.169-3.192-.169-3.159 0-5.323 1.987-5.323 5.639v3.361h-3.486v4.266h3.486v10.734h4.274v-10.733h3.345l.531-4.266h-3.877v-2.939c.001-1.233.333-2.077 2.051-2.077z"></path>
                 </svg>
@@ -590,7 +607,8 @@
         </a>
         <a class="u-social-url" title="twitter" target="_blank" href="">
             <span class="u-icon u-icon-circle u-social-icon u-social-twitter u-text-white u-icon-3">
-                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512.001 512.001" style="">
+                <svg class="u-svg-link" preserveAspectRatio="xMidYMin slice" viewBox="0 0 512.001 512.001"
+                     style="">
                     <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#svg-110e"></use>
                 </svg>
                 <svg class="u-svg-content" id="svg-110e" style="color: rgb(255, 255, 255);">
