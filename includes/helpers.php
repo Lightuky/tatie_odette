@@ -238,9 +238,8 @@ function setNewContestPattern($pattern_id, $creator_id, $contest_id): string
 
 function setNewOrder($data, $user_id) {
     $dbh = connectDB();
-    $stmt = $dbh->prepare( "INSERT INTO orders (number, printing_location, reception_code, pattern_id, user_id) 
-                                    VALUES (:number, :printing_location, :reception_code, :pattern_id, :user_id)");
-    $stmt->bindValue(':number', $user_id . $data['pattern'] . $data['weight'] . $data['type']);
+    $stmt = $dbh->prepare( "INSERT INTO orders (printing_location, reception_code, pattern_id, user_id) 
+                                    VALUES (:printing_location, :reception_code, :pattern_id, :user_id)");
     $stmt->bindValue(':printing_location', $data['duration']);
     $stmt->bindValue(':reception_code', $user_id . $data['pattern'] . $data['weight']);
     $stmt->bindValue(':pattern_id', $data['pattern']);

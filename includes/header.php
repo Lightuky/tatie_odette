@@ -52,10 +52,23 @@ session_start();
                        href="../../tatie_odette/blog/posts" style="padding: 10px 20px;">Blog</a>
                 </li>
                 <li class="u-nav-item">
-                    <a class="u-button-style u-nav-link u-text-active-white u-text-hover-custom-color-2" href="../../tatie_odette/login" style="padding: 10px 20px 10px 8px; display: flex; align-items: center;">
-                        <i class="fas fa-user-circle fa-2x"></i>
-                        <div class="ml-2">Me connecter</div>
-                    </a>
+                    <?php if (!isset($_SESSION['auth_id'])): ?>
+                        <a class="u-button-style u-nav-link u-text-active-white u-text-hover-custom-color-2" href="../../tatie_odette/login" style="padding: 10px 20px 10px 8px; display: flex; align-items: center;">
+                            <i class="fas fa-sign-in-alt fa-2x mr-1"></i>
+                            <div class="ml-2">Me connecter</div>
+                        </a>
+                    <?php else: ?>
+                        <div class="d-flex">
+                            <a class="u-button-style u-nav-link u-text-active-white u-text-hover-custom-color-2 pr-0 mr-1" href="../../tatie_odette/profile?id=<?php echo $_SESSION['auth_id'] ?>"
+                               style="padding: 10px 20px 10px 8px; display: flex; align-items: center;">
+                                <i class="fas fa-user-circle fa-2x"></i>
+                                <div class="ml-2">Mon profil</div>
+                            </a>
+                            <form class="form-inline px-0 mx-2 mb-0" method="post" action="../../tatie_odette/assets/logout.php">
+                                <button class="btn text-light my-2 shadow-none" type="submit" title="Déconnexion"><i class="fas fa-power-off fa-2x"></i></button>
+                            </form>
+                        </div>
+                    <?php endif; ?>
                 </li>
             </ul>
         </div>
@@ -84,10 +97,23 @@ session_start();
                                href="../../tatie_odette/blog/posts" style="padding: 10px 20px;">Blog</a>
                         </li>
                         <li class="u-nav-item">
-                            <a class="u-button-style u-nav-link u-text-active-white u-text-hover-custom-color-2" href="../../tatie_odette/login" style="padding: 10px 20px 10px 8px; display: flex; align-items: center;">
-                                <i class="fas fa-user-circle fa-2x"></i>
-                                <div class="ml-2">Me connecter</div>
-                            </a>
+                            <?php if (!isset($_SESSION['auth_id'])): ?>
+                                <a class="u-button-style u-nav-link u-text-active-white u-text-hover-custom-color-2" href="../../tatie_odette/login" style="padding: 10px 20px 10px 8px; display: flex; align-items: center;">
+                                    <i class="fas fa-sign-in-alt fa-2x mr-1"></i>
+                                    <div class="ml-2">Me connecter</div>
+                                </a>
+                            <?php else: ?>
+                                <div class="d-flex">
+                                    <a class="u-button-style u-nav-link u-text-active-white u-text-hover-custom-color-2 pr-0 mr-1" href="../../tatie_odette/profile?id="<?php echo $_SESSION['auth_id'] ?>
+                                       style="padding: 10px 20px 10px 8px; display: flex; align-items: center;">
+                                        <i class="fas fa-user-circle fa-2x"></i>
+                                        <div class="ml-2">Mon profil</div>
+                                    </a>
+                                    <form class="form-inline px-0 mx-2 mb-0" method="post" action="../../tatie_odette/assets/logout.php">
+                                        <button class="btn text-light my-2 shadow-none" type="submit" title="Déconnexion"><i class="fas fa-power-off fa-2x"></i></button>
+                                    </form>
+                                </div>
+                            <?php endif; ?>
                         </li>
                     </ul>
                 </div>
