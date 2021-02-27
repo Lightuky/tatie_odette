@@ -2,7 +2,7 @@
 <html style="font-size: 16px;" lang="fr">
 <head>
     <meta name="keywords" content="Post 1 Headline">
-    <title>Post 6 Headline</title>
+    <title>Post 6 Headline | Tatie Odette</title>
     <link rel="stylesheet" href="../resources/css/posts.css" media="screen">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,400i,700|Baskervville:400,400i">

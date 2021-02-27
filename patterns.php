@@ -2,7 +2,7 @@
 <html style="font-size: 16px;" lang="fr">
 <head>
     <meta name="keywords" content="Modèles simples">
-    <title>Les modèles</title>
+    <title>Les modèles | Tatie Odette</title>
     <link rel="stylesheet" href="resources/css/patterns.css" media="screen">
     <link id="u-theme-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:100,100i,300,300i,400,400i,500,500i,700,700i,900,900i|Open+Sans:300,300i,400,400i,600,600i,700,700i,800,800i">
     <link id="u-page-google-font" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Seaweed+Script:400|Libre+Baskerville:400,400i,700|Baskervville:400,400i">
@@ -23,7 +23,7 @@
                 <div class="u-effect-fade u-gallery-item">
                     <div class="u-back-slide">
                         <img class="u-back-image u-expanded"
-                             src="images/3d-chrome-front-logo-mockup-modern-facade-sign_145275-181.jpg?rand=5ff7">
+                             src="images/3d-chrome-front-logo-mockup-modern-facade-sign_145275-181.jpg?rand=5ff7" alt="">
                     </div>
                     <div class="u-over-slide u-shading u-over-slide-1">
                         <h3 class="u-gallery-heading"></h3>
@@ -33,7 +33,7 @@
                 <div class="u-effect-fade u-gallery-item">
                     <div class="u-back-slide">
                         <img class="u-back-image u-expanded"
-                             src="images/notebooks-mockup-with-black-element-black-background_24972-1167.jpg?rand=516f">
+                             src="images/notebooks-mockup-with-black-element-black-background_24972-1167.jpg?rand=516f" alt="">
                     </div>
                     <div class="u-over-slide u-shading u-over-slide-2">
                         <h3 class="u-gallery-heading"></h3>
@@ -43,7 +43,7 @@
                 <div class="u-effect-fade u-gallery-item">
                     <div class="u-back-slide">
                         <img class="u-back-image u-expanded"
-                             src="images/logo-mockup-close-up-white-paper_145275-125.jpg?rand=1305">
+                             src="images/logo-mockup-close-up-white-paper_145275-125.jpg?rand=1305" alt="">
                     </div>
                     <div class="u-over-slide u-shading u-over-slide-3">
                         <h3 class="u-gallery-heading"></h3>
@@ -53,7 +53,7 @@
                 <div class="u-effect-fade u-gallery-item">
                     <div class="u-back-slide" data-image-width="626" data-image-height="417">
                         <img class="u-back-image u-expanded"
-                             src="images/3d-white-logo-mockup-black-facade-sign_145275-184.jpg?rand=4551">
+                             src="images/3d-white-logo-mockup-black-facade-sign_145275-184.jpg?rand=4551" alt="">
                     </div>
                     <div class="u-over-slide u-shading u-over-slide-4">
                         <h3 class="u-gallery-heading"></h3>
