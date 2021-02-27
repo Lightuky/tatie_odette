@@ -6,6 +6,7 @@
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#478ac9">
 <link rel="canonical" href="index.php">
+<link rel="shortcut icon" type="image/ico" href="../../tatie_odette/images/favicon/logo.ico"/>
 <meta property="og:url" content="index.html">
 <script type="application/ld+json">{
         "@context": "http://schema.org",
