@@ -145,7 +145,10 @@ function getUserContestPattern($user_id, $contest_id, $pattern_id) {
 function getUserOrders($user_id): array
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM orders WHERE user_id = :user_id");
+
+    $stmt = $dbh->prepare("SELECT orders.*, patterns.name, patterns.description, patterns.picture, patterns.category 
+                                FROM patterns LEFT JOIN orders ON patterns.id = orders.pattern_id
+                                WHERE orders.user_id = :user_id ORDER BY orders.created_at DESC");
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -181,7 +184,7 @@ function getCountOrdersByPattern($pattern_id): array
 function getUserPatterns($user_id): array
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM users_patterns WHERE creator_id = :user_id");
+    $stmt = $dbh->prepare("SELECT * FROM users_patterns WHERE creator_id = :user_id ORDER BY created_at DESC");
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -197,7 +200,7 @@ function getPattern($pattern_id) {
 
 function getUser($user_id) {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM patterns WHERE id = :user_id");
+    $stmt = $dbh->prepare("SELECT * FROM users WHERE id = :user_id");
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
     return $stmt->fetch(PDO::FETCH_ASSOC);
@@ -206,7 +209,9 @@ function getUser($user_id) {
 function getUserFavorites($user_id): array
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM users_favorites WHERE user_id = :user_id");
+    $stmt = $dbh->prepare("SELECT patterns.*, users_favorites.user_id FROM users_favorites LEFT JOIN patterns 
+                                ON users_favorites.pattern_id = patterns.id WHERE users_favorites.user_id = :user_id 
+                                ORDER BY users_favorites.created_at DESC");
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
