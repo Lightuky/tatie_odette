@@ -1,0 +1,59 @@
+.container h2.u-text-1 {
+    font-family: 'Seaweed Script', serif;
+    font-size: 3rem;
+}
+.container h6 {
+    letter-spacing: 1px;
+    border-bottom: 3px solid rgba(217,216,216,0.29);
+    color: #746868;
+}
+
+.container .h5 {
+    letter-spacing: 1px;
+    border-bottom: 2px solid rgba(217,216,216,0.29);
+    color: #746868;
+}
+
+.patternImg {
+    width: 176px;
+    height: 176px;
+}
+
+.patternOrderOptions button {
+    color: #fff;
+    background-color: #caaf84;
+}
+
+.patternOrderOptions button:hover {
+    color: #fff;
+    background-color: #a38f6e;
+}
+
+.patternOrderOptions button:focus, .patternOrderForm button:focus, .btn.patternOptionTypeBtn:focus,
+.btn.patternOptionWeightBtn:focus, .btn.patternOptionTextBtn:focus, .btn.patternOptionTextInput:focus {
+    box-shadow: none!important;
+}
+
+.patternOptionTextInput .form-control {border: none;}
+
+.patternOptionTextInput .form-control:focus {box-shadow: none!important; border-color: transparent!important;}
+
+.patternOrderOptionsCol {width: 33%;}
+
+.patternOptionTypeBtn, .patternOptionWeightBtn, .patternOptionTextBtn, .patternOptionTextInput {
+    color: #baac97!important;
+    background-color: white!important;
+    border: 2px solid #e5dac7!important;
+    padding: 4px!important;
+}
+
+.patternOptionsActive {
+    color: #fff!important;
+    background-color: #b4a399!important;
+    border: 2px solid #b4a399!important;
+}
+
+.patternOrderForm .btn:hover {
+    background-color: #786e64!important;
+    transition: all ease-in-out 150ms;
+}

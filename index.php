@@ -15,7 +15,7 @@
     <div class="u-clearfix u-sheet u-sheet-1">
         <div class="u-align-center u-border-3 u-border-white u-container-style u-group u-similar-fill u-group-1">
             <div class="u-container-layout u-container-layout-1">
-                <h3 class="u-custom-font u-text u-text-1"><i class="fas fa-sign-in-alt"></i>Imaginez et créez vos plus belles oeuvres chocolatés...</h3>
+                <h3 class="u-custom-font u-text u-text-1">Imaginez et créez vos plus belles oeuvres chocolatés...</h3>
                 <a href="#" class="u-border-2 u-border-grey-5 u-border-hover-custom-color-2 u-btn u-btn-round u-button-style u-none u-radius-50 u-btn-1">En savoir plus..</a>
             </div>
         </div>
@@ -32,8 +32,7 @@
 </section>
 <section class="u-align-center u-clearfix u-section-5" id="sec-9e18">
     <h2 class="u-custom-font u-text u-text-custom-color-1 u-text-1">Tatie Odette</h2>
-    <h3 class="u-custom-font u-text u-text-custom-color-1 u-text-2">La machine qui donne vie à vos envies chocolatées.
-    </h3>
+    <h3 class="u-custom-font u-text u-text-custom-color-1 u-text-2">La machine qui donne vie à vos envies chocolatées.</h3>
     <div class="u-list u-repeater u-list-1">
         <div class="u-container-style u-list-item u-repeater-item u-list-item-1" data-animation-name="rotateIn"
              data-animation-duration="1000" data-animation-delay="0" data-animation-direction="">

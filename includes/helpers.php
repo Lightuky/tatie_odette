@@ -51,6 +51,14 @@ function getPatterns(): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getUsersPatterns(): array
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM users_patterns");
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function getAllContestsPatterns(): array
 {
     $dbh = connectDB();
@@ -124,16 +132,6 @@ function getUserContestsPatterns($user_id): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getUserContestPatterns($user_id, $contest_id): array
-{
-    $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE creator_id = :user_id AND contest_id = :contest_id");
-    $stmt->bindValue(':user_id', $user_id);
-    $stmt->bindValue(':contest_id', $contest_id);
-    $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
-}
-
 function getUserContestPattern($user_id, $contest_id, $pattern_id) {
     $dbh = connectDB();
     $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE creator_id = :user_id AND creator_id = :contest_id AND pattern_id = :pattern_id");
@@ -153,14 +151,22 @@ function getUserOrders($user_id): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
-function getUserOrder($user_id, $order_id): array
+function getOrder($order_id): array
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM orders WHERE user_id = :user_id AND id = :order_id");
-    $stmt->bindValue(':user_id', $user_id);
+    $stmt = $dbh->prepare("SELECT * FROM orders WHERE id = :order_id");
     $stmt->bindValue(':order_id', $order_id);
     $stmt->execute();
-    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+function getOrderByNumber($order_number): array
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM orders WHERE number = :order_number");
+    $stmt->bindValue(':order_number', $order_number);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 function getCountOrdersByPattern($pattern_id): array
@@ -175,7 +181,7 @@ function getCountOrdersByPattern($pattern_id): array
 function getUserPatterns($user_id): array
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM patterns WHERE creator_id = :user_id");
+    $stmt = $dbh->prepare("SELECT * FROM users_patterns WHERE creator_id = :user_id");
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -236,27 +242,39 @@ function setNewContestPattern($pattern_id, $creator_id, $contest_id): string
     return $dbh->lastInsertId();
 }
 
-function setNewOrder($data, $user_id) {
+function setNewOrder($data, $user_id): string
+{
     $dbh = connectDB();
-    $stmt = $dbh->prepare( "INSERT INTO orders (printing_location, reception_code, pattern_id, user_id) 
-                                    VALUES (:printing_location, :reception_code, :pattern_id, :user_id)");
-    $stmt->bindValue(':printing_location', $data['duration']);
-    $stmt->bindValue(':reception_code', $user_id . $data['pattern'] . $data['weight']);
-    $stmt->bindValue(':pattern_id', $data['pattern']);
+    $stmt = $dbh->prepare( "INSERT INTO orders (printing_location, reception_code, pattern_id, chocolate_type, chocolate_weight, chocolate_text, chocolate_text_type, user_id) 
+                                    VALUES (:printing_location, :reception_code, :pattern_id, :chocolate_type, :chocolate_weight, :chocolate_text, :chocolate_text_type, :user_id)");
+    $stmt->bindValue(':printing_location', $data['printing_location']);
+    $stmt->bindValue(':reception_code', $data['reception_code']);
+    $stmt->bindValue(':pattern_id', $data['pattern_id']);
+    $stmt->bindValue(':chocolate_type', $data['chocolate_type']);
+    $stmt->bindValue(':chocolate_weight', $data['chocolate_weight']);
+    $stmt->bindValue(':chocolate_text', $data['chocolate_text']);
+    $stmt->bindValue(':chocolate_text_type', $data['chocolate_text_type']);
     $stmt->bindValue(':user_id', $user_id);
+    $stmt->execute();
+    return $dbh->lastInsertId();
+}
+
+function setNewOrderNumber($order_number, $order_id) {
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("UPDATE orders SET number = :number WHERE id = $order_id");
+    $stmt->bindValue(':number', $order_number);
     $stmt->execute();
 }
 
-function setNewPattern($data, $user_id): string
+function setNewPattern($data): string
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare( "INSERT INTO patterns (name, description, picture, category, creator_id) 
-                                    VALUES (:name, :description, :picture, :category, :creator_id)");
+    $stmt = $dbh->prepare( "INSERT INTO patterns (name, description, picture, category) 
+                                    VALUES (:name, :description, :picture, :category)");
     $stmt->bindValue(':name', $data['name']);
     $stmt->bindValue(':description', $data['description']);
     $stmt->bindValue(':picture', $data['picture']);
     $stmt->bindValue(':category', $data['category']);
-    $stmt->bindValue(':creator_id', $user_id);
     $stmt->execute();
     return $dbh->lastInsertId();
 }
@@ -272,6 +290,24 @@ function setNewUser($data): string
     $stmt->bindValue(':email', $data['email']);
     $stmt->bindValue(':password', sha1($data['password']));
     $stmt->bindValue(':phone_number', $data['phone_number']);
+    $stmt->execute();
+    return $dbh->lastInsertId();
+}
+
+function setNewUserPattern($data, $user_id): string
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare( "INSERT INTO users_patterns (name, description, picture, category, chocolate_type, chocolate_text, chocolate_text_type, chocolate_weight, creator_id) 
+                                    VALUES (:name, :description, :picture, :category, :chocolate_type, :chocolate_text, :chocolate_text_type, :chocolate_weight, :creator_id)");
+    $stmt->bindValue(':name', $data['name']);
+    $stmt->bindValue(':description', $data['description']);
+    $stmt->bindValue(':picture', $data['picture']);
+    $stmt->bindValue(':category', $data['category']);
+    $stmt->bindValue(':chocolate_type', $data['chocolate_type']);
+    $stmt->bindValue(':chocolate_text', $data['chocolate_text']);
+    $stmt->bindValue(':chocolate_text_type', $data['chocolate_text_type']);
+    $stmt->bindValue(':chocolate_weight', $data['chocolate_weight']);
+    $stmt->bindValue(':creator_id', $user_id);
     $stmt->execute();
     return $dbh->lastInsertId();
 }
