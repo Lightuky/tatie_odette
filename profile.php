@@ -48,7 +48,7 @@ require_once 'includes/header.php';
                                     <p class="text-muted font-size-sm">Inscrit(e) le <?php echo strftime("%e %B %Y", strtotime($user['created_at'])) ?></p>
                                     <?php if (isset($_SESSION['auth_id'])):
                                         if ($user_id == $_SESSION['auth_id']): ?>
-                                            <a href="edit-user?id=<?php echo $user_id ?>" class="btn profileEditBtn">Éditer mes infos</a>
+                                            <a href="profile-edit" class="btn profileEditBtn">Éditer mes infos</a>
                                         <?php endif;
                                     endif; ?>
                                 </div>

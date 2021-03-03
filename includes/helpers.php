@@ -302,11 +302,12 @@ function setNewUser($data): string
 function setNewUserPattern($data, $user_id): string
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare( "INSERT INTO users_patterns (name, description, picture, category, chocolate_type, chocolate_text, chocolate_text_type, chocolate_weight, creator_id) 
-                                    VALUES (:name, :description, :picture, :category, :chocolate_type, :chocolate_text, :chocolate_text_type, :chocolate_weight, :creator_id)");
-    $stmt->bindValue(':name', $data['name']);
-    $stmt->bindValue(':description', $data['description']);
-    $stmt->bindValue(':picture', $data['picture']);
+    $stmt = $dbh->prepare( "INSERT INTO users_patterns (name, description, piece_type, pattern_identifier, category, chocolate_type, chocolate_text, chocolate_text_type, chocolate_weight, creator_id) 
+                                    VALUES (:name, :description, :piece_type, :pattern_identifier, :category, :chocolate_type, :chocolate_text, :chocolate_text_type, :chocolate_weight, :creator_id)");
+    $stmt->bindValue(':name', $data['pattern_name']);
+    $stmt->bindValue(':description', $data['pattern_description']);
+    $stmt->bindValue(':piece_type', $data['piece_type']);
+    $stmt->bindValue(':pattern_identifier', $data['pattern_identifier']);
     $stmt->bindValue(':category', $data['category']);
     $stmt->bindValue(':chocolate_type', $data['chocolate_type']);
     $stmt->bindValue(':chocolate_text', $data['chocolate_text']);
@@ -380,11 +381,12 @@ function searchPatterns($query): array
 
 function updateUser($data, $user_id) {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("UPDATE users SET  first_name = :first_name, last_name = :last_name, birth_date = :birthday, phone_number = :phone_number, updated_at = :updated_at WHERE id = $user_id");
+    $stmt = $dbh->prepare("UPDATE users SET first_name = :first_name, last_name = :last_name, birth_date = :birth_date, phone_number = :phone_number, updated_at = :updated_at WHERE id = :user_id");
     $stmt->bindValue(':first_name', $data['first_name']);
     $stmt->bindValue(':last_name', $data['last_name']);
     $stmt->bindValue(':birth_date', $data['birth_date']);
     $stmt->bindValue(':phone_number', $data['phone_number']);
     $stmt->bindValue(':updated_at', date("Y-m-d H:i:s", time()));
+    $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
 }
