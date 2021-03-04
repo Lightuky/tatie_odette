@@ -107,10 +107,19 @@ function getContest($id) {
 function getContestPatterns($contest_id): array
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE contest_id = :contest_id");
+        $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE contest_id = :contest_id ORDER BY contest_patterns.votes DESC");
     $stmt->bindValue(':contest_id', $contest_id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getContestWinnerPattern($contest_id): array
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE contest_id = :contest_id ORDER BY contest_patterns.votes DESC LIMIT 1");
+    $stmt->bindValue(':contest_id', $contest_id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 function getContestPattern($contest_id, $pattern_id): array
@@ -132,9 +141,19 @@ function getUserContestsPatterns($user_id): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getUserContestPatterns($user_id, $contest_id): array
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE creator_id = :user_id AND contest_id = :contest_id");
+    $stmt->bindValue(':user_id', $user_id);
+    $stmt->bindValue(':contest_id', $contest_id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 function getUserContestPattern($user_id, $contest_id, $pattern_id) {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE creator_id = :user_id AND creator_id = :contest_id AND pattern_id = :pattern_id");
+    $stmt = $dbh->prepare("SELECT * FROM contest_patterns WHERE creator_id = :user_id AND contest_id = :contest_id AND pattern_id = :pattern_id");
     $stmt->bindValue(':user_id', $user_id);
     $stmt->bindValue(':contest_id', $contest_id);
     $stmt->bindValue(':pattern_id', $pattern_id);
@@ -153,6 +172,19 @@ function getUserOrders($user_id): array
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
+
+function getUserPatternOrders($user_id): array
+{
+    $dbh = connectDB();
+
+    $stmt = $dbh->prepare("SELECT orders.*, users_patterns.name, users_patterns.piece_type, users_patterns.description, users_patterns.pattern_identifier, users_patterns.category 
+                                FROM users_patterns LEFT JOIN orders ON users_patterns.id = orders.pattern_id
+                                WHERE orders.user_id = :user_id ORDER BY orders.created_at DESC");
+    $stmt->bindValue(':user_id', $user_id);
+    $stmt->execute();
+    return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
 
 function getOrder($order_id): array
 {
@@ -190,6 +222,15 @@ function getUserPatterns($user_id): array
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
 }
 
+function getUserPattern($pattern_id): array
+{
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM users_patterns WHERE id = :pattern_id ORDER BY created_at DESC");
+    $stmt->bindValue(':pattern_id', $pattern_id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
 function getPattern($pattern_id) {
     $dbh = connectDB();
     $stmt = $dbh->prepare("SELECT * FROM patterns WHERE id = :pattern_id");
@@ -225,10 +266,11 @@ function getUserFavorites($user_id): array
 function setNewContest($data): string
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare( "INSERT INTO contests (name, description, start_date, duration) 
-                                    VALUES (:name, :description, :start_date, :duration)");
+    $stmt = $dbh->prepare( "INSERT INTO contests (name, description, theme, start_date, end_date) 
+                                    VALUES (:name, :description, :theme, :start_date, :duration)");
     $stmt->bindValue(':name', $data['name']);
     $stmt->bindValue(':description', $data['description']);
+    $stmt->bindValue(':theme', $data['theme']);
     $stmt->bindValue(':start_date', $data['start_date']);
     $stmt->bindValue(':duration', $data['duration']);
     $stmt->execute();
@@ -241,8 +283,8 @@ function setNewContestPattern($pattern_id, $creator_id, $contest_id): string
     $stmt = $dbh->prepare( "INSERT INTO contest_patterns (pattern_id, contest_id, creator_id) 
                                     VALUES (:pattern_id, :contest_id, :creator_id)");
     $stmt->bindValue(':pattern_id', $pattern_id);
-    $stmt->bindValue(':contest_id', $creator_id);
-    $stmt->bindValue(':creator_id', $contest_id);
+    $stmt->bindValue(':contest_id', $contest_id);
+    $stmt->bindValue(':creator_id', $creator_id);
     $stmt->execute();
     return $dbh->lastInsertId();
 }

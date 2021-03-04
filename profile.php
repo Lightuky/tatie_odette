@@ -7,14 +7,18 @@ $user_id = isset($_GET['id']) ? $_GET['id'] : null;
 $user = getUser($user_id);
 $userPatterns = getUserPatterns($user_id);
 $userFavorites = getUserFavorites($user_id);
+
 $userOrders = getUserOrders($user_id);
+$userPatternOrders = getUserPatternOrders($user_id);
+
+$usersAllOrders = array_merge($userPatternOrders, $userOrders);
+$userOrdersCreated = array_column($usersAllOrders, 'created_at');
+array_multisort($usersAllOrders, SORT_DESC, $userOrdersCreated);
 
 if (!$user) {
     $pathError = "/tatie_odette/404.php";
     header('Location: ' . $pathError);
 }
-
-require_once 'includes/header.php';
 
 ?>
 <!DOCTYPE html>
@@ -61,13 +65,13 @@ require_once 'includes/header.php';
                                 <div class="card-body">
                                     <h6 class="d-flex align-items-center mb-3">Mes commandes récentes</h6>
                                     <div class="list-group list-group-flush mb-0 h-100">
-                                        <?php if($userOrders):
-                                            foreach($userOrders as $k => $userOrder):
+                                        <?php if($usersAllOrders):
+                                            foreach($usersAllOrders as $k => $usersAllOrder):
                                                 if ($k <= 4): ?>
                                                     <div class="list-group-item list-group-item-action d-flex justify-content-between align-items-center flex-wrap small px-1">
-                                                        <div><?php echo ucfirst($userOrder['name']) ?></div>
-                                                        <div><?php echo ucfirst($userOrder['category']) ?></div>
-                                                        <div>le <?php echo date('d/m/Y', strtotime($userOrder['created_at'])) ?></div>
+                                                        <div><?php echo ucfirst($usersAllOrder['name']) ?></div>
+                                                        <div><?php echo ucfirst($usersAllOrder['category']) ?></div>
+                                                        <div>le <?php echo date('d/m/Y', strtotime($usersAllOrder['created_at'])) ?></div>
                                                     </div>
                                                 <?php endif;
                                             endforeach;

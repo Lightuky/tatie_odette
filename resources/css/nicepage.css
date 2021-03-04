@@ -38164,3 +38164,14 @@ html {
 }
 
 /*end-variables base-font-size*/
+
+html::-webkit-scrollbar {
+    width: 8px!important;
+    height: 8px!important;
+    background-color: #fff!important;
+}
+
+html::-webkit-scrollbar-thumb {
+    background: #e79925!important;
+    border-radius: 10px!important;
+}
