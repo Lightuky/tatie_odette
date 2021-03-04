@@ -6,7 +6,19 @@ setlocale(LC_ALL, array('fr_FR.UTF-8','french.UTF-8'));
 $user_id = isset($_GET['id']) ? $_GET['id'] : null;
 $user = getUser($user_id);
 $userPatterns = getUserPatterns($user_id);
+
 $userFavorites = getUserFavorites($user_id);
+foreach ($userFavorites as $k => $userFavorite):
+    if ($userFavorite['pattern_type'] === "b"):
+        $baseFavorite = getPattern($userFavorite['pattern_id']);
+        $userFavorites[$k]['name'] = $baseFavorite['name'];
+        $userFavorites[$k]['category'] = $baseFavorite['category'];
+    elseif ($userFavorite['pattern_type'] === "u"):
+        $userPatFavorite = getUserPattern($userFavorite['pattern_id']);
+        $userFavorites[$k]['name'] = $userPatFavorite['name'];
+        $userFavorites[$k]['category'] = $userPatFavorite['category'];
+    endif;
+endforeach;
 
 $userOrders = getUserOrders($user_id);
 $userPatternOrders = getUserPatternOrders($user_id);
@@ -146,7 +158,8 @@ if (!$user) {
                                         <?php if($userFavorites):
                                             foreach($userFavorites as $k => $userFavorite):
                                                 if ($k <= 4): ?>
-                                                    <a href="user-favorites?id=<?php echo $userFavorite['id'] ?>" class="list-group-item list-group-item-action d-flex justify-content-between align-items-center flex-wrap">
+                                                    <a href="<?php echo $userFavorite['pattern_type'] == "b" ? "pattern-info" : "user-patterns" ?>?id=<?php echo $userFavorite['pattern_id'] ?>"
+                                                       class="list-group-item list-group-item-action d-flex justify-content-between align-items-center flex-wrap">
                                                         <div class="mb-0 font-weight-bolder"><?php echo ucfirst($userFavorite['name']) ?></div>
                                                         <span class="text-secondary"><?php echo ucfirst($userFavorite['category']) ?></span>
                                                     </a>

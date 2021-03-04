@@ -12,7 +12,8 @@ $pattern_identifiers = [
     ["name" => "Arc de Triomphe", "picture" => "arc_triomphe_lait1-510x510.jpg"], ["name" => "Poule", "picture" => "miam-factory-480x280.png"],
     ["name" => "Chat porte-bonheur", "picture" => "20191009093448959.jpg"], ["name" => "Ourson", "picture" => "1478387096279.jpg"],
 ];
-$pattern_picture = $img_src ="";
+$pattern_picture = $img_src = "";
+$userPatternFav = [];
 $user_pattern_id = isset($_GET['id']) ? $_GET['id'] : null;
 $user_pattern = getUserPattern($user_pattern_id);
 
@@ -34,6 +35,11 @@ else:
 endif;
 
 require_once 'includes/header.php';
+
+if (isset($_SESSION['auth_id'])):
+    $userPatternFav = getUserFavoritePattern($user_pattern_id, "u", $_SESSION['auth_id']);
+endif;
+
 ?>
 <!DOCTYPE html>
 <html style="font-size: 16px;" lang="fr">
@@ -118,7 +124,7 @@ require_once 'includes/header.php';
                     </div>
                     <?php endif; ?>
                 </div>
-                <form method="post" action="assets/order.php?r=b" class="patternOrderForm mt-4">
+                <form method="post" action="assets/order.php?r=b" class="patternOrderForm mt-4 text-center">
                     <input type="hidden" id="pattern_id" name="pattern_id" value="<?php echo $user_pattern['id'] ?>">
                     <input type="hidden" id="category" name="category" value="<?php echo $user_pattern['category'] ?>">
                     <input type="hidden" id="chocolate_type" name="chocolate_type" value="<?php echo $user_pattern['chocolate_type'] ?>">
@@ -127,6 +133,12 @@ require_once 'includes/header.php';
                     <input type="hidden" id="chocolate_text_type" name="chocolate_text_type" value="<?php echo $user_pattern['chocolate_text_type'] ?>">
                     <?php if (isset($_SESSION['auth_id'])): ?>
                         <button type="submit" class="btn text-light w-100" style="background-color: #a99b8e">Commander</button>
+                        <div class="small text-muted my-3">OU</div>
+                        <?php if(!$userPatternFav): ?>
+                            <a class="btn text-light" style="background-color: #76be8c;" href="assets/favorites?id=<?php echo $user_pattern['id'] ?>&t=u&a=a">Ajouter en favori</a>
+                        <?php else: ?>
+                            <a class="btn text-light" style="background-color: #ec604c;" href="assets/favorites?id=<?php echo $user_pattern['id'] ?>&t=u&a=d">Retirer des favori</a>
+                        <?php endif; ?>
                     <?php else: ?>
                         <a href="login.php" class="btn text-light w-100" style="background-color: #a99b8e">Commander</a>
                     <?php endif; ?>

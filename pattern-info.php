@@ -3,6 +3,7 @@ require_once 'includes/helpers.php';
 
 $pattern_id = isset($_GET['id']) ? $_GET['id'] : null;
 $pattern = getPattern($pattern_id);
+$basePatternFav = [];
 
 if (!$pattern) {
     $pathError =  "/tatie_odette/404.php";
@@ -10,6 +11,10 @@ if (!$pattern) {
 }
 
 require_once 'includes/header.php';
+
+if (isset($_SESSION['auth_id'])):
+    $basePatternFav = getUserFavoritePattern($pattern_id, "b", $_SESSION['auth_id']);
+endif;
 
 ?>
 <!DOCTYPE html>
@@ -99,7 +104,7 @@ require_once 'includes/header.php';
                         <div class="orderRecapText">Vide</div>
                     </div>
                 </div>
-                <form method="post" action="assets/order.php?r=b" class="patternOrderForm mt-4">
+                <form method="post" action="assets/order.php?r=b" class="patternOrderForm mt-4 text-center">
                     <input type="hidden" id="pattern_id" name="pattern_id" value="<?php echo $pattern['id'] ?>">
                     <input type="hidden" id="category" name="category" value="<?php echo $pattern['category'] ?>">
                     <input type="hidden" id="chocolate_type" name="chocolate_type" value="Noir">
@@ -107,6 +112,12 @@ require_once 'includes/header.php';
                     <input type="hidden" id="chocolate_text" name="chocolate_text" value="Vide">
                     <?php if (isset($_SESSION['auth_id'])): ?>
                         <button type="submit" class="btn text-light w-100" style="background-color: #a99b8e">Commander</button>
+                        <div class="small text-muted my-3">OU</div>
+                        <?php if(!$basePatternFav): ?>
+                            <a class="btn text-light" style="background-color: #76be8c;" href="assets/favorites?id=<?php echo $pattern['id'] ?>&t=b&a=a">Ajouter en favori</a>
+                        <?php else: ?>
+                            <a class="btn text-light" style="background-color: #ec604c;" href="assets/favorites?id=<?php echo $pattern['id'] ?>&t=b&a=d">Retirer des favori</a>
+                        <?php endif; ?>
                     <?php else: ?>
                         <a href="login.php" class="btn text-light w-100" style="background-color: #a99b8e">Commander</a>
                     <?php endif; ?>

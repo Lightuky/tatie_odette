@@ -250,12 +250,20 @@ function getUser($user_id) {
 function getUserFavorites($user_id): array
 {
     $dbh = connectDB();
-    $stmt = $dbh->prepare("SELECT patterns.*, users_favorites.user_id FROM users_favorites LEFT JOIN patterns 
-                                ON users_favorites.pattern_id = patterns.id WHERE users_favorites.user_id = :user_id 
-                                ORDER BY users_favorites.created_at DESC");
+    $stmt = $dbh->prepare("SELECT * FROM users_favorites WHERE user_id = :user_id ORDER BY users_favorites.created_at DESC");
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+}
+
+function getUserFavoritePattern($pattern_id, $pattern_type, $user_id){
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("SELECT * FROM users_favorites WHERE user_id = :user_id AND pattern_id = :pattern_id AND pattern_type = :pattern_type");
+    $stmt->bindValue(':pattern_id', $pattern_id);
+    $stmt->bindValue(':pattern_type', $pattern_type);
+    $stmt->bindValue(':user_id', $user_id);
+    $stmt->execute();
+    return $stmt->fetch(PDO::FETCH_ASSOC);
 }
 
 /*
@@ -360,11 +368,12 @@ function setNewUserPattern($data, $user_id): string
     return $dbh->lastInsertId();
 }
 
-function setNewUserFavorite($pattern_id, $user_id) {
+function setNewUserFavorite($pattern_id, $pattern_type, $user_id) {
     $dbh = connectDB();
-    $stmt = $dbh->prepare( "INSERT INTO users_favorites (pattern_id, user_id)
-                                     VALUES (:pattern_id, :user_id)");
+    $stmt = $dbh->prepare( "INSERT INTO users_favorites (pattern_id, pattern_type, user_id)
+                                     VALUES (:pattern_id, :pattern_type, :user_id)");
     $stmt->bindValue(':pattern_id', $pattern_id);
+    $stmt->bindValue(':pattern_type', $pattern_type);
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
 }
@@ -429,6 +438,21 @@ function updateUser($data, $user_id) {
     $stmt->bindValue(':birth_date', $data['birth_date']);
     $stmt->bindValue(':phone_number', $data['phone_number']);
     $stmt->bindValue(':updated_at', date("Y-m-d H:i:s", time()));
+    $stmt->bindValue(':user_id', $user_id);
+    $stmt->execute();
+}
+
+/*
+ * SQL requests deleting lines in DB
+ *
+ */
+
+function delUserFavorite($pattern_id, $pattern_type, $user_id) {
+    $dbh = connectDB();
+    $stmt = $dbh->prepare("DELETE FROM users_favorites 
+                                WHERE (pattern_id = :pattern_id AND pattern_type = :pattern_type AND user_id = :user_id)");
+    $stmt->bindValue(':pattern_id', $pattern_id);
+    $stmt->bindValue(':pattern_type', $pattern_type);
     $stmt->bindValue(':user_id', $user_id);
     $stmt->execute();
 }
