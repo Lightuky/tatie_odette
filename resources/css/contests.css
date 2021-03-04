@@ -475,3 +475,8 @@
 .userPatternsSubmit .contestBlock:hover {
     background-color: #e7e5e5 !important;
 }
+
+#registerForm .form-control:focus, #loginForm .form-control:focus {
+    border-color: revert!important;
+    box-shadow: none!important;
+}

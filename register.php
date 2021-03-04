@@ -27,7 +27,7 @@ endif;
     <div class="container w-50">
         <div class="mb-5" style="padding: 30px 0!important;">
             <h2 style="color: #62513f;">Création de compte</h2>
-            <form method="post" action="assets/register.php" style="color: #95816d">
+            <form method="post" action="assets/register.php" style="color: #95816d" id="registerForm">
                 <div class="form-group">
                     <label for="first_name">Prénom</label>
                     <input type="text" name="first_name" id="first_name" class="form-control"

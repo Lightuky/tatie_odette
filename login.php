@@ -27,7 +27,7 @@ endif;
     <div class="container w-50">
         <div class="my-5" style="padding: 60px 0!important;">
             <h2 style="color: #62513f;">Connectez-vous</h2>
-            <form method="post" action="assets/login.php" style="color: #95816d">
+            <form method="post" action="assets/login.php" style="color: #95816d" id="loginForm">
                 <div class="form-group">
                     <label for="email">Email</label>
                     <input type="text" name="email" id="email" placeholder="exemple@exemple.com" class="form-control"
