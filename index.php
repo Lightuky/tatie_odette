@@ -16,7 +16,7 @@
         <div class="u-align-center u-border-3 u-border-white u-container-style u-group u-similar-fill u-group-1">
             <div class="u-container-layout u-container-layout-1">
                 <h3 class="u-custom-font u-text u-text-1">Imaginez et créez vos plus belles oeuvres chocolatés...</h3>
-                <a href="#" class="u-border-2 u-border-grey-5 u-border-hover-custom-color-2 u-btn u-btn-round u-button-style u-none u-radius-50 u-btn-1">En savoir plus..</a>
+                <a href="patterns" class="u-border-2 u-border-grey-5 u-border-hover-custom-color-2 u-btn u-btn-round u-button-style u-none u-radius-50 u-btn-1">En savoir plus..</a>
             </div>
         </div>
     </div>
@@ -90,8 +90,7 @@
                 </span>
                 <h3 class="u-align-center u-custom-font u-text u-text-3">Imaginez</h3>
                 <p class="u-align-center u-text u-text-4">Imaginez votre oeuvre chocolaté de vos rêves<br></p>
-                <a href=""
-                   class="u-active-none u-border-2 u-border-custom-color-2 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-color u-btn-1">Inspirations</a>
+                <a href="patterns" class="u-active-none u-border-2 u-border-custom-color-2 u-btn u-btn-rectangle u-button-style u-hover-none u-none u-text-body-color u-btn-1">Inspirations</a>
             </div>
         </div>
         <div class="u-align-center u-container-style u-list-item u-repeater-item u-list-item-2"
@@ -114,8 +113,7 @@
                 </span>
                 <h3 class="u-custom-font u-text u-text-5">Créez</h3>
                 <p class="u-text u-text-6">Créer votre oeuvre chocolatés selon vos goûts et vos envies</p>
-                <a href=""
-                   class="u-active-none u-border-2 u-border-custom-color-2 u-btn u-btn-rectangle u-button-style u-hover-none u-text-body-color u-btn-2">Créer</a>
+                <a href="create-pattern" class="u-active-none u-border-2 u-border-custom-color-2 u-btn u-btn-rectangle u-button-style u-hover-none u-text-body-color u-btn-2">Créer</a>
             </div>
         </div>
         <div class="u-align-center u-container-style u-list-item u-repeater-item u-list-item-3"
@@ -288,11 +286,9 @@
         </div>
         <div class="u-container-style u-group u-group-2">
             <div class="u-container-layout u-container-layout-2">
-                <p class="u-text u-text-custom-color-1 u-text-1">Gagnez du temps,créez votre modèle maintenant et
-                    scannez-le une fois devant notre machine Tatie Odette!
+                <p class="u-text u-text-custom-color-1 u-text-1">Gagnez du temps,créez votre modèle maintenant et scannez-le une fois devant notre machine Tatie Odette!
                 </p>
-                <a href="#"
-                   class="u-border-2 u-border-hover-custom-color-1 u-border-white u-btn u-btn-round u-button-style u-none u-radius-50 u-text-hover-custom-color-1 u-text-white u-btn-1">Créer</a>
+                <a href="create-pattern" class="u-border-2 u-border-hover-custom-color-1 u-border-white u-btn u-btn-round u-button-style u-none u-radius-50 u-text-hover-custom-color-1 u-text-white u-btn-1">Créer</a>
             </div>
         </div>
         <div class="u-container-style u-group u-opacity u-opacity-85 u-white u-group-3">
@@ -381,22 +377,18 @@
                                 <div class="u-container-layout u-valign-top u-container-layout-2">
                                     <h2 class="u-align-center u-text u-text-grey-70 u-text-2" style="margin-left: 0;">S'inscrire à notre Newsletter</h2>
                                     <div class="u-form u-form-1">
-                                        <form action="#" method="POST"
-                                              class="u-block-583d-21 u-clearfix u-form-spacing-25 u-form-vertical u-inner-form"
-                                              source="custom">
+                                        <form action="#" method="POST" class="u-block-583d-21 u-clearfix u-form-spacing-25 u-form-vertical u-inner-form">
                                             <!-- hidden inputs for siteId and pageId -->
                                             <!-- always visible -->
                                             <div class="u-form-email u-form-group">
-                                                <label for="email-e4cc"
-                                                       class="u-form-control-hidden u-label">Email</label>
+                                                <label for="email-e4cc" class="u-form-control-hidden u-label">Email</label>
                                                 <input type="email" placeholder="Entrez une adresse email valide"
                                                        id="email-e4cc" name="email"
                                                        class="u-border-no-bottom u-border-no-left u-border-no-right u-border-no-top u-grey-5 u-input u-input-rectangle"
                                                        required="">
                                             </div>
                                             <div class="u-align-center u-form-group u-form-submit">
-                                                <a href="#"
-                                                   class="u-border-2 u-border-grey-dark-1 u-btn u-btn-round u-btn-submit u-button-style u-none u-radius-30 u-btn-1">S'inscrire</a>
+                                                <a href="#" class="u-border-2 u-border-grey-dark-1 u-btn u-btn-round u-btn-submit u-button-style u-none u-radius-30 u-btn-1">S'inscrire</a>
                                                 <input type="submit" value="submit" class="u-form-control-hidden u-grey-5">
                                             </div>
                                             <div class="u-form-send-message u-form-send-success"> Thank you! Your message has been sent.</div>
