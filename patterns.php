@@ -113,7 +113,6 @@ $patterns = getPatterns();
                     <span data-filter="*" class="active">Tout</span>
                     <span data-filter=".architecture" class="">Architecture</span>
                     <span data-filter=".animaux" class="">Animaux</span>
-                    <span data-filter=".lettres" class="">Lettres</span>
                     <span data-filter=".formes" class="">Formes</span>
                 </div>
                 <div class="col-12 text-center w-100 mx-auto">
